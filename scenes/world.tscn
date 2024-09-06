@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddwncph75y7nv"]
+[gd_scene load_steps=10 format=3 uid="uid://ddwncph75y7nv"]
 
 [ext_resource type="PackedScene" uid="uid://bad52rrgwkuna" path="res://scenes/player.tscn" id="1_jjbev"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_so7e7"]
+[ext_resource type="Texture2D" uid="uid://boo5l2on48v0j" path="res://textures/prototype.svg" id="3_e7j36"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxsgv"]
 
@@ -11,6 +12,19 @@ sky_material = SubResource("ProceduralSkyMaterial_hxsgv")
 [sub_resource type="Environment" id="Environment_udqog"]
 background_mode = 2
 sky = SubResource("Sky_m16v5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7x6i"]
+albedo_texture = ExtResource("3_e7j36")
+uv1_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ros0n"]
+material = SubResource("StandardMaterial3D_b7x6i")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rkexa"]
+size = Vector3(100, 1, 100)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_so7e7")
@@ -26,5 +40,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 [node name="Level" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
-[node name="Floor" type="CSGBox3D" parent="Level"]
-size = Vector3(5, 0.2, 5)
+[node name="Floor" type="StaticBody3D" parent="Level"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Floor"]
+mesh = SubResource("PlaneMesh_ros0n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_rkexa")

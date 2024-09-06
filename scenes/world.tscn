@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddwncph75y7nv"]
+
+[ext_resource type="PackedScene" uid="uid://bad52rrgwkuna" path="res://scenes/player.tscn" id="1_jjbev"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_so7e7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxsgv"]
+
+[sub_resource type="Sky" id="Sky_m16v5"]
+sky_material = SubResource("ProceduralSkyMaterial_hxsgv")
+
+[sub_resource type="Environment" id="Environment_udqog"]
+background_mode = 2
+sky = SubResource("Sky_m16v5")
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_so7e7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_udqog")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Player" parent="." instance=ExtResource("1_jjbev")]
+
+[node name="Level" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="Floor" type="CSGBox3D" parent="Level"]
+size = Vector3(5, 0.2, 5)

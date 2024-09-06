@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bad52rrgwkuna"]
+
+[ext_resource type="PackedScene" uid="uid://lm5osr4yy1oy" path="res://scenes/hand.tscn" id="1_lgxmu"]
+
+[node name="Player" type="XROrigin3D"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="LeftHand" parent="." instance=ExtResource("1_lgxmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+
+[node name="RightHand" parent="." instance=ExtResource("1_lgxmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"

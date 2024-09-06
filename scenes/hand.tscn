@@ -3,7 +3,7 @@
 [sub_resource type="PrismMesh" id="PrismMesh_fi7hl"]
 size = Vector3(0.25, 0.5, 0.1)
 
-[node name="LeftHand" type="XRController3D"]
+[node name="Hand" type="XRController3D"]
 tracker = &"left_hand"
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]

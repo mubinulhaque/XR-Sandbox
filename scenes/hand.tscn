@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://lm5osr4yy1oy"]
-
-[node name="Hand" type="XRController3D"]
-tracker = &"left_hand"

@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bad52rrgwkuna"]
+[gd_scene load_steps=13 format=3 uid="uid://bad52rrgwkuna"]
 
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_y5uae"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="2_12sug"]
 [ext_resource type="PackedScene" uid="uid://bx1xdisoqo1f6" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_tac_glove_low.tscn" id="2_b4ojs"]
+[ext_resource type="Script" path="res://scripts/left_hand.gd" id="2_rlvqg"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_3y7bl"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_pqjis"]
 [ext_resource type="PackedScene" uid="uid://chumpejwiub7f" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_tac_glove_low.tscn" id="3_to7gw"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_ie2cr"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_ms3cc"]
+[ext_resource type="PackedScene" uid="uid://dg2v1cu31wn0n" path="res://scenes/options_menu.tscn" id="8_h81v7"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/movement_physical_jump.gd" id="8_wqe4g"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_twdp8"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -19,10 +23,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="LeftHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
+script = ExtResource("2_rlvqg")
 
 [node name="LeftHandRig" parent="LeftHand" instance=ExtResource("2_b4ojs")]
 
 [node name="FunctionTeleport" parent="LeftHand" instance=ExtResource("2_12sug")]
+
+[node name="OptionsViewport" parent="LeftHand" instance=ExtResource("7_ms3cc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.3, 0)
+visible = false
+screen_size = Vector2(0.5, 0.5)
+enabled = false
+scene = ExtResource("8_h81v7")
+viewport_size = Vector2(400, 400)
+scene_properties_keys = PackedStringArray("options_menu.gd")
 
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
@@ -34,7 +48,11 @@ tracker = &"right_hand"
 
 [node name="MovementTurn" parent="RightHand" instance=ExtResource("4_ie2cr")]
 
+[node name="FunctionPointer" parent="RightHand" instance=ExtResource("9_twdp8")]
+
 [node name="PlayerBody" parent="." instance=ExtResource("3_pqjis")]
 
 [node name="MovementPhysicalJump" type="Node" parent="." groups=["movement_providers"]]
 script = ExtResource("8_wqe4g")
+
+[connection signal="button_pressed" from="LeftHand" to="LeftHand" method="_on_button_pressed"]

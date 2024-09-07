@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="XR Sandbox"
+config/description="Explores metaverse development through Godot's XR capabilities"
+config/version="0.1.0"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"

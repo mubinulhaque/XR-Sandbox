@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bad52rrgwkuna"]
+[gd_scene load_steps=9 format=3 uid="uid://bad52rrgwkuna"]
 
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_y5uae"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="2_12sug"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_pqjis"]
 [ext_resource type="PackedScene" uid="uid://chumpejwiub7f" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_tac_glove_low.tscn" id="3_to7gw"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_ie2cr"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/movement_physical_jump.gd" id="8_wqe4g"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -34,3 +35,6 @@ tracker = &"right_hand"
 [node name="MovementTurn" parent="RightHand" instance=ExtResource("4_ie2cr")]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_pqjis")]
+
+[node name="MovementPhysicalJump" type="Node" parent="." groups=["movement_providers"]]
+script = ExtResource("8_wqe4g")

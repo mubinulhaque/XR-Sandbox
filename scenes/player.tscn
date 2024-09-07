@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bad52rrgwkuna"]
+[gd_scene load_steps=7 format=3 uid="uid://bad52rrgwkuna"]
 
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="2_12sug"]
 [ext_resource type="PackedScene" uid="uid://bx1xdisoqo1f6" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_tac_glove_low.tscn" id="2_b4ojs"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_3y7bl"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_pqjis"]
 [ext_resource type="PackedScene" uid="uid://chumpejwiub7f" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_tac_glove_low.tscn" id="3_to7gw"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_ie2cr"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -14,8 +18,16 @@ tracker = &"left_hand"
 
 [node name="LeftHandRig" parent="LeftHand" instance=ExtResource("2_b4ojs")]
 
+[node name="FunctionTeleport" parent="LeftHand" instance=ExtResource("2_12sug")]
+
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
-tracker = &"left_hand"
+tracker = &"right_hand"
 
 [node name="RightHandRig" parent="RightHand" instance=ExtResource("3_to7gw")]
+
+[node name="MovementDirect" parent="RightHand" instance=ExtResource("3_3y7bl")]
+
+[node name="MovementTurn" parent="RightHand" instance=ExtResource("4_ie2cr")]
+
+[node name="PlayerBody" parent="." instance=ExtResource("3_pqjis")]

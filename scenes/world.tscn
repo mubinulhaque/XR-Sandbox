@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddwncph75y7nv"]
+[gd_scene load_steps=12 format=3 uid="uid://ddwncph75y7nv"]
 
 [ext_resource type="PackedScene" uid="uid://bad52rrgwkuna" path="res://scenes/player.tscn" id="1_jjbev"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_so7e7"]
@@ -26,6 +26,15 @@ size = Vector2(100, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkexa"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kli6f"]
+albedo_texture = ExtResource("3_e7j36")
+uv1_triplanar = true
+uv2_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5dat4"]
+material = SubResource("StandardMaterial3D_kli6f")
+size = Vector3(16, 8, 1)
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_so7e7")
 
@@ -48,3 +57,24 @@ mesh = SubResource("PlaneMesh_ros0n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_rkexa")
+
+[node name="Wall" type="StaticBody3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -8)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Wall"]
+mesh = SubResource("BoxMesh_5dat4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_rkexa")
+
+[node name="Title" type="Label3D" parent="Level/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+text = "XR Sandbox"
+font_size = 128
+
+[node name="Controls" type="Label3D" parent="Level/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.55)
+text = "Use the Left Trigger to teleport
+Use the Right Stick to turn and move"
+font_size = 64

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddwncph75y7nv"]
+[gd_scene load_steps=13 format=3 uid="uid://ddwncph75y7nv"]
 
 [ext_resource type="PackedScene" uid="uid://bad52rrgwkuna" path="res://scenes/player.tscn" id="1_jjbev"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_so7e7"]
@@ -23,8 +23,8 @@ uv2_world_triplanar = true
 material = SubResource("StandardMaterial3D_b7x6i")
 size = Vector2(100, 100)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rkexa"]
-size = Vector3(16, 8, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_4cqee"]
+size = Vector3(100, 1, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kli6f"]
 albedo_texture = ExtResource("3_e7j36")
@@ -33,6 +33,10 @@ uv2_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_5dat4"]
 material = SubResource("StandardMaterial3D_kli6f")
+size = Vector3(16, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rkexa"]
+resource_local_to_scene = true
 size = Vector3(16, 8, 1)
 
 [node name="World" type="Node3D"]
@@ -56,7 +60,7 @@ mesh = SubResource("PlaneMesh_ros0n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_rkexa")
+shape = SubResource("BoxShape3D_4cqee")
 
 [node name="Wall" type="StaticBody3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -8)

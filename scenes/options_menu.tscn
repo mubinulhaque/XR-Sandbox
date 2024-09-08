@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg2v1cu31wn0n"]
 
-[ext_resource type="PackedScene" uid="uid://ytsxet2k47lj" path="res://addons/godot-xr-tools/user_settings/user_settings_ui.tscn" id="1_ap6i2"]
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_dr6as"]
+[ext_resource type="PackedScene" uid="uid://bru47g3dgkdnk" path="res://scenes/user_settings_extended.tscn" id="2_4es7x"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 script = ExtResource("1_dr6as")
@@ -35,9 +35,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="UserSettingsUI" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource("1_ap6i2")]
+[node name="UserSettingsExtended" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource("2_4es7x")]
 layout_mode = 2
-current_tab = 0
 
 [node name="ExitButton" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2

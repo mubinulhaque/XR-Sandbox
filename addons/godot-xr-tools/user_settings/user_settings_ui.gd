@@ -1,3 +1,4 @@
+class_name UserSettings
 extends TabContainer
 
 signal player_height_changed(new_height)

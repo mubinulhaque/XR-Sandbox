@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bru47g3dgkdnk"]
+
+[ext_resource type="PackedScene" uid="uid://ytsxet2k47lj" path="res://addons/godot-xr-tools/user_settings/user_settings_ui.tscn" id="1_luoy5"]
+[ext_resource type="Script" path="res://scripts/user_settings_extended.gd" id="2_8t1vf"]
+
+[node name="UserSettingsExtended" instance=ExtResource("1_luoy5")]
+current_tab = 0
+script = ExtResource("2_8t1vf")
+
+[node name="Input" parent="." index="1"]
+metadata/_tab_index = 0
+
+[node name="LeftHanded" type="HBoxContainer" parent="Input/InputVBox" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Input/InputVBox/LeftHanded" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Left handed:"
+
+[node name="LeftHandedCB" type="CheckBox" parent="Input/InputVBox/LeftHanded" index="1"]
+layout_mode = 2
+
+[node name="Player" parent="." index="2"]
+metadata/_tab_index = 1
+
+[node name="WebXR" parent="." index="3"]
+metadata/_tab_index = 2
+
+[connection signal="pressed" from="Input/InputVBox/LeftHanded/LeftHandedCB" to="." method="_on_left_handed_checkbox_pressed"]

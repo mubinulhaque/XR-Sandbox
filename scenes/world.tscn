@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddwncph75y7nv"]
+[gd_scene load_steps=14 format=3 uid="uid://ddwncph75y7nv"]
 
 [ext_resource type="PackedScene" uid="uid://bad52rrgwkuna" path="res://scenes/player.tscn" id="1_jjbev"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_so7e7"]
 [ext_resource type="Texture2D" uid="uid://boo5l2on48v0j" path="res://textures/prototype.svg" id="3_e7j36"]
+[ext_resource type="PackedScene" uid="uid://cgplcbbmf2viy" path="res://scenes/plush.tscn" id="4_ttdjy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxsgv"]
 
@@ -81,3 +82,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.55)
 text = "Use the Left Trigger to teleport
 Use the Right Stick to turn and move"
 font_size = 64
+
+[node name="Plush" parent="Level" instance=ExtResource("4_ttdjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)

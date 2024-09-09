@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhe8anfpadjwm"]
+[gd_scene load_steps=6 format=3 uid="uid://bhe8anfpadjwm"]
 
 [ext_resource type="Script" path="res://scripts/hand.gd" id="1_2vejn"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_vsrny"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="5_poxu3"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="5_x5wup"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_dnr00"]
 
-[node name="Hand" type="XRController3D"]
+[node name="HandController" type="XRController3D"]
 tracker = &"left_hand"
 script = ExtResource("1_2vejn")
 
@@ -18,5 +19,7 @@ enabled = false
 
 [node name="MovementTurn" parent="." instance=ExtResource("6_dnr00")]
 enabled = false
+
+[node name="FunctionPickup" parent="." instance=ExtResource("5_x5wup")]
 
 [connection signal="button_pressed" from="." to="." method="_on_button_pressed"]

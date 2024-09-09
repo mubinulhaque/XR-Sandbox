@@ -1,8 +1,7 @@
-class_name Hand
+class_name HandController
 extends XRController3D
 
 @export var use_direct_movement := false ## Whether this hand controls turning and forwards motion, or teleportation
-
 @export var options_viewport: Viewport2Din3D
 
 @onready var _function_teleport: XRToolsFunctionTeleport = $FunctionTeleport

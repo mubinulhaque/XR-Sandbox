@@ -34,6 +34,10 @@ gdscript/warnings/unsafe_call_argument=1
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[global_group]
+
+small_weapon="For weapons that can be holstered to the side of a player"
+
 [layer_names]
 
 3d_physics/layer_1="Static World"

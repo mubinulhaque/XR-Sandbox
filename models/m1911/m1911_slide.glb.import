@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dccrwqv8ehui0"
-path="res://.godot/imported/m1911.glb-90486de030dd30690f696ccc7fae1ff7.scn"
+uid="uid://kyeq4togdm1r"
+path="res://.godot/imported/m1911_slide.glb-f3dad7d161f13a32fda50c4077588198.scn"
 
 [deps]
 
-source_file="res://models/m1911.glb"
-dest_files=["res://.godot/imported/m1911.glb-90486de030dd30690f696ccc7fae1ff7.scn"]
+source_file="res://models/m1911/m1911_slide.glb"
+dest_files=["res://.godot/imported/m1911_slide.glb-f3dad7d161f13a32fda50c4077588198.scn"]
 
 [params]
 
@@ -31,6 +31,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/pistol_frame.tres"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/pistol_frame.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

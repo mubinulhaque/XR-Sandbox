@@ -36,8 +36,8 @@ func toggle_locomotion(direct_movement: bool) -> void:
 	_function_teleport.visible = not direct_movement
 
 
+## Toggle the pointer
 func _toggle_pointer(enabled: bool) -> void:
-	# Toggle the pointer
 	if pointer:
 		pointer.visible = !pointer.visible
 		pointer.enabled = !pointer.enabled

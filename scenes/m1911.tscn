@@ -135,6 +135,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0voly")
 
 [node name="M1911" groups=["small_weapons"] instance=ExtResource("1_4ogtc")]
+ranged_grab_method = 2
+second_hand_grab = 1
 
 [node name="Model" parent="." index="0" instance=ExtResource("2_ib31d")]
 transform = Transform3D(-0.021, 0, -3.17091e-09, 0, 0.021, 0, 3.17091e-09, 0, -0.021, -0.0135969, 0, -0.0261888)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bad52rrgwkuna"]
+[gd_scene load_steps=11 format=3 uid="uid://bad52rrgwkuna"]
 
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_y5uae"]
 [ext_resource type="PackedScene" uid="uid://bx1xdisoqo1f6" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_tac_glove_low.tscn" id="2_b4ojs"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dg2v1cu31wn0n" path="res://scenes/options_menu.tscn" id="5_rsaxk"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="7_0834d"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/functions/movement_physical_jump.gd" id="8_wqe4g"]
+[ext_resource type="PackedScene" uid="uid://dh1brgtw0npe" path="res://scenes/belt_snap_zone.tscn" id="9_ld01b"]
 
 [node name="Player" type="XROrigin3D"]
 
@@ -42,6 +43,12 @@ use_direct_movement = true
 [node name="FunctionPointer" parent="RightHand" instance=ExtResource("7_0834d")]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_pqjis")]
+
+[node name="LeftSnapZone" parent="PlayerBody" instance=ExtResource("9_ld01b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.75, 0)
+
+[node name="RightSnapZone" parent="PlayerBody" instance=ExtResource("9_ld01b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.75, 0)
 
 [node name="MovementPhysicalJump" type="Node" parent="." groups=["movement_providers"]]
 script = ExtResource("8_wqe4g")

@@ -15,7 +15,7 @@
 [ext_resource type="Material" uid="uid://cksku6u3am4oh" path="res://materials/highlight.tres" id="13_jx32l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5cgr"]
-size = Vector3(0.03, 0.13, 0.2)
+size = Vector3(0.05, 0.13, 0.2)
 
 [sub_resource type="Resource" id="Resource_nc8gp"]
 script = ExtResource("6_dxg3x")
@@ -134,7 +134,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0voly")
 
-[node name="M1911" groups=["small_weapon"] instance=ExtResource("1_4ogtc")]
+[node name="M1911" groups=["small_weapons"] instance=ExtResource("1_4ogtc")]
 
 [node name="Model" parent="." index="0" instance=ExtResource("2_ib31d")]
 transform = Transform3D(-0.021, 0, -3.17091e-09, 0, 0.021, 0, 3.17091e-09, 0, -0.021, -0.0135969, 0, -0.0261888)
@@ -163,7 +163,6 @@ visible = false
 script = ExtResource("11_0a8bh")
 
 [node name="FrameHighlight" type="MeshInstance3D" parent="PickupHighlight" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_e8ahv")
 surface_material_override/0 = ExtResource("13_jx32l")
 

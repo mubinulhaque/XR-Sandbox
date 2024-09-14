@@ -36,7 +36,7 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 [global_group]
 
-small_weapon="For weapons that can be holstered to the side of a player"
+small_weapons="For weapons that can be holstered to the side of a player"
 
 [layer_names]
 

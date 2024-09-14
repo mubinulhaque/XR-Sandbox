@@ -18,7 +18,7 @@ func _on_button_pressed(button_name: String) -> void:
 		"menu_button":
 			if options_viewport:
 				options_viewport.visible = !options_viewport.visible
-				options_viewport.enabled = !options_viewport.enabled 
+				options_viewport.enabled = !options_viewport.enabled
 
 
 func toggle_locomotion(direct_movement: bool) -> void:

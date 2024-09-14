@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddwncph75y7nv"]
+[gd_scene load_steps=16 format=3 uid="uid://ddwncph75y7nv"]
 
 [ext_resource type="PackedScene" uid="uid://bad52rrgwkuna" path="res://scenes/player.tscn" id="1_jjbev"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_so7e7"]
 [ext_resource type="Texture2D" uid="uid://boo5l2on48v0j" path="res://textures/prototype.svg" id="3_e7j36"]
 [ext_resource type="PackedScene" uid="uid://cgplcbbmf2viy" path="res://scenes/plush.tscn" id="4_ttdjy"]
 [ext_resource type="PackedScene" uid="uid://fjwai8p4ll8s" path="res://scenes/m1911.tscn" id="5_6u4fe"]
+[ext_resource type="PackedScene" uid="uid://c5begqpnewkbl" path="res://scenes/m1911_magazine.tscn" id="6_0ugli"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxsgv"]
 
@@ -88,4 +89,13 @@ font_size = 64
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
 [node name="M1911" parent="Level" instance=ExtResource("5_6u4fe")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.125, -5)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.125, -2)
+
+[node name="M1911Magazine" parent="Level" instance=ExtResource("6_0ugli")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.25, 0.125, -2)
+
+[node name="M1911Magazine2" parent="Level" instance=ExtResource("6_0ugli")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0.125, -2)
+
+[node name="M1911Magazine3" parent="Level" instance=ExtResource("6_0ugli")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.75, 0.125, -2)

@@ -42,7 +42,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3ud64")
 
-[node name="M1911Magazine" instance=ExtResource("1_vonog")]
+[node name="M1911Magazine" groups=["m1911_magazine"] instance=ExtResource("1_vonog")]
 
 [node name="Model" parent="." index="1" instance=ExtResource("2_kh4um")]
 transform = Transform3D(-0.021, 0, -1.83588e-09, 0, 0.021, 0, 1.83588e-09, 0, -0.021, -0.011, 0.01, -0.05)
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0247634, 0.0183054, -0.0837
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00314248, 0.0338478, -0.0851014)
 
 [node name="GrabPointSnap" parent="." index="4" instance=ExtResource("5_iseqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, -0.005)
 
 [node name="XRToolsHighlightVisible" type="Node3D" parent="." index="5"]
 transform = Transform3D(-0.021, 0, -3.17091e-09, 0, 0.021, 0, 3.17091e-09, 0, -0.021, 0, 0.01, -0.05)

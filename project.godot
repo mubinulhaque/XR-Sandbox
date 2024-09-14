@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 [global_group]
 
 small_weapons="For weapons that can be holstered to the side of a player"
+m1911_magazine="Magazine for the M1911"
 
 [layer_names]
 

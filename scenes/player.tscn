@@ -22,7 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 options_viewport = NodePath("OptionsViewport2")
 
-[node name="LeftHandRig2" parent="LeftHand" instance=ExtResource("2_b4ojs")]
+[node name="LeftHandRig" parent="LeftHand" instance=ExtResource("2_b4ojs")]
 
 [node name="OptionsViewport2" parent="LeftHand" instance=ExtResource("4_e77x7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.3, 0)
@@ -33,14 +33,17 @@ scene = ExtResource("5_rsaxk")
 viewport_size = Vector2(400, 400)
 scene_properties_keys = PackedStringArray("options_menu.gd")
 
-[node name="RightHand" parent="." instance=ExtResource("2_qsagq")]
+[node name="RightHand" parent="." node_paths=PackedStringArray("pointer") instance=ExtResource("2_qsagq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 use_direct_movement = true
+pointer = NodePath("Pointer")
 
 [node name="RightHandRig" parent="RightHand" instance=ExtResource("3_to7gw")]
 
-[node name="FunctionPointer" parent="RightHand" instance=ExtResource("7_0834d")]
+[node name="Pointer" parent="RightHand" instance=ExtResource("7_0834d")]
+visible = false
+enabled = false
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_pqjis")]
 
@@ -52,3 +55,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.75, 0)
 
 [node name="MovementPhysicalJump" type="Node" parent="." groups=["movement_providers"]]
 script = ExtResource("8_wqe4g")
+
+[connection signal="options_toggled" from="LeftHand" to="RightHand" method="_toggle_pointer"]

@@ -10,7 +10,7 @@
 tracker = &"left_hand"
 script = ExtResource("1_2vejn")
 
-[node name="FunctionTeleport" parent="." instance=ExtResource("3_vsrny")]
+[node name="Teleporter" parent="." instance=ExtResource("3_vsrny")]
 visible = false
 enabled = false
 

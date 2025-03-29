@@ -14,7 +14,7 @@ config/name="XR Sandbox"
 config/description="Explores metaverse development through Godot's XR capabilities"
 config/version="0.1.0"
 run/main_scene="res://scenes/world.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -65,5 +65,4 @@ textures/vram_compression/import_etc2_astc=true
 openxr/enabled=true
 openxr/foveation_level=3
 openxr/foveation_dynamic=true
-openxr/extensions/hand_tracking=false
 shaders/enabled=true

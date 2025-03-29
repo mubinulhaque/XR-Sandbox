@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bru47g3dgkdnk"]
 
 [ext_resource type="PackedScene" uid="uid://ytsxet2k47lj" path="res://addons/godot-xr-tools/user_settings/user_settings_ui.tscn" id="1_luoy5"]
-[ext_resource type="Script" path="res://scripts/user_settings_extended.gd" id="2_8t1vf"]
+[ext_resource type="Script" uid="uid://dg2rpae8hos7j" path="res://scripts/user_settings_extended.gd" id="2_8t1vf"]
 
 [node name="UserSettingsExtended" instance=ExtResource("1_luoy5")]
 current_tab = 0

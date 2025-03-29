@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhe8anfpadjwm"]
 
-[ext_resource type="Script" path="res://scripts/hand.gd" id="1_2vejn"]
+[ext_resource type="Script" uid="uid://b3mde6kpo14t2" path="res://scripts/hand.gd" id="1_2vejn"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="3_vsrny"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="5_poxu3"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="5_x5wup"]

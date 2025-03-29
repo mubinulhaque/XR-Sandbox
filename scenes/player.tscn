@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bad52rrgwkuna"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_2nfll"]
+[ext_resource type="Script" uid="uid://cim1kbwdkid0w" path="res://scripts/player.gd" id="1_2nfll"]
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_y5uae"]
 [ext_resource type="PackedScene" uid="uid://bx1xdisoqo1f6" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_tac_glove_low.tscn" id="2_b4ojs"]
 [ext_resource type="PackedScene" uid="uid://bhe8anfpadjwm" path="res://scenes/hand.tscn" id="2_qsagq"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_e77x7"]
 [ext_resource type="PackedScene" uid="uid://dg2v1cu31wn0n" path="res://scenes/options_menu.tscn" id="5_rsaxk"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="7_0834d"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/movement_physical_jump.gd" id="8_wqe4g"]
+[ext_resource type="Script" uid="uid://d2ueh8x6vvjdn" path="res://addons/godot-xr-tools/functions/movement_physical_jump.gd" id="8_wqe4g"]
 [ext_resource type="PackedScene" uid="uid://dh1brgtw0npe" path="res://scenes/belt_snap_zone.tscn" id="9_ld01b"]
 
 [node name="Player" type="XROrigin3D"]

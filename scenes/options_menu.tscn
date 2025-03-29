@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg2v1cu31wn0n"]
 
-[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_dr6as"]
+[ext_resource type="Script" uid="uid://hf3nc047dkga" path="res://scripts/options_menu.gd" id="1_dr6as"]
 [ext_resource type="PackedScene" uid="uid://bru47g3dgkdnk" path="res://scenes/user_settings_extended.tscn" id="2_4es7x"]
 
 [node name="OptionsMenu" type="CanvasLayer"]

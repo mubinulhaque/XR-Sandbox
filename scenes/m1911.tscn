@@ -1,18 +1,18 @@
 [gd_scene load_steps=27 format=4 uid="uid://fjwai8p4ll8s"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_4ogtc"]
-[ext_resource type="Script" path="res://scripts/m1911.gd" id="2_ay4yw"]
+[ext_resource type="Script" uid="uid://cbtlmnuc1bwq4" path="res://scripts/m1911.gd" id="2_ay4yw"]
 [ext_resource type="PackedScene" uid="uid://dccrwqv8ehui0" path="res://models/m1911/m1911.glb" id="2_ib31d"]
 [ext_resource type="PackedScene" uid="uid://caay6df52f36u" path="res://models/m1911/m1911_mag.glb" id="3_ygof3"]
 [ext_resource type="PackedScene" uid="uid://kyeq4togdm1r" path="res://models/m1911/m1911_slide.glb" id="4_5om2y"]
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="4_dnrc7"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_jmdct"]
 [ext_resource type="Animation" uid="uid://ddbo6ioa282en" path="res://addons/godot-xr-tools/hands/animations/left/Pistol.res" id="6_ca6l5"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_dxg3x"]
+[ext_resource type="Script" uid="uid://bo0x1odoyw06t" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_dxg3x"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_mmc03"]
 [ext_resource type="Animation" uid="uid://csp3fdknowmi5" path="res://addons/godot-xr-tools/hands/animations/right/Pistol.res" id="9_pasyd"]
 [ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="10_88trq"]
-[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="11_0a8bh"]
+[ext_resource type="Script" uid="uid://c8j107tofjgyg" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="11_0a8bh"]
 [ext_resource type="Material" uid="uid://de7n5alpjush0" path="res://materials/pistol_frame.tres" id="12_lpad4"]
 [ext_resource type="Material" uid="uid://cksku6u3am4oh" path="res://materials/highlight.tres" id="13_jx32l"]
 
@@ -136,6 +136,33 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0voly")
 
+[sub_resource type="Animation" id="Animation_ti1ns"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/MagSnapZone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.39, -2.205)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/MagSnapZone:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_egeq3"]
 resource_name = "eject_magazine"
 length = 0.25
@@ -174,33 +201,6 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.25),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_ti1ns"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Model/MagSnapZone:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.39, -2.205)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Model/MagSnapZone:enabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -251,9 +251,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fdpqp"]
 _data = {
-"RESET": SubResource("Animation_ti1ns"),
-"eject_magazine": SubResource("Animation_egeq3"),
-"load_magazine": SubResource("Animation_uy0ji")
+&"RESET": SubResource("Animation_ti1ns"),
+&"eject_magazine": SubResource("Animation_egeq3"),
+&"load_magazine": SubResource("Animation_uy0ji")
 }
 
 [node name="M1911" groups=["small_weapons"] instance=ExtResource("1_4ogtc")]

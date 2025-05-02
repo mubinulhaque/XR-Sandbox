@@ -22,14 +22,15 @@ func _on_MagSnapZone_has_picked_up(what: Variant) -> void:
 	_magazine = what
 
 
-func _on_picked_up(pickable: Variant) -> void:
-	print("Picked up!")
-	_controller = get_picked_up_by_controller()
-	_controller.button_pressed.connect(_eject_magazine)
+func _on_picked_up(_pickable: Variant) -> void:
+	if _controller == null:
+		print("Picked up!")
+		_controller = get_picked_up_by_controller()
+		_controller.button_pressed.connect(_eject_magazine)
 
 
 func _eject_magazine(button_name: String) -> void:
-	if button_name == "by_button" and _magazine:
+	if button_name == "by_button" and _magazine and _controller:
 		_animator.play("eject_magazine")
 		_controller.button_pressed.disconnect(_eject_magazine)
 		_controller = null
